@@ -1,0 +1,84 @@
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+    <%= link_to '#', camplife %>
+ </header>
+
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">キャンプの情報を入力</h2>
+    <%= form_with model: @post, local: true do |f| %>
+
+      <%# <%= render 'shared/error_messages', model: f.object %>
+
+    <%# 場所の名前と都道府県 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        キャンプ地
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :location_name, class:"items-text", id:"post-location-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <div class="form">
+        <div class="weight-bold-text">
+          都道府県
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+      </div>
+
+    <%# 行った月と日付 %>
+    <div class="form">
+        <div class="weight-bold-text">
+          何月
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">日付</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <div class='input-birth-wrap'>
+         <%= raw sprintf(
+           f.date_select(
+            :birth_date,
+             class:'select-birth',
+             id:"birth-date",
+             use_month_numbers: true,
+             prompt:'--',
+             start_year: 19,
+             end_year: (Time.now),
+             date_separator: '%s'),
+          "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+      </div>
+    </div>
+
+
+    <%# 写真%>
+
+    <%# 天気%>
+
+    <%# 気温%>
+
+    <%# 風%>
+
+    <%# キャンプスタイル%>
+
+    <%# 料金%>
+
+    <%# チェックイン、チェックアウト%>
+
+    <%# 駐車場%>
+
+    <%# シャワー%>
+
+    <%# キッチン%>
+
+    <%# トイレ%>
+
+    <%# ゴミ%>
+
+    <%# 管理人%>
+
+    <%# 説明%>
+
+    <%# コメント%>

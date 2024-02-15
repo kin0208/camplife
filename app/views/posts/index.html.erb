@@ -1,0 +1,20 @@
+<div class="main_container">
+  <div class="search_bar row">
+    <%= form_with(url: "#", id: "search_form") do |form| %>
+      <%= form.text_field :"#", placeholder: "" %>
+      <%= form.submit "投稿検索" %>
+    <% end %>
+    <%= link_to('#', class: 'post-btn') do %>
+      <span class='purchase-btn-text'>投稿する</span>
+    <% end %>
+  </div>
+  <div class="contents row" id="camp_post">
+    <<% @posts.each do |post| %> 
+      <div class="content_post" style="background-image: url(<%= tweet.image %>);">
+        <p><%= tweet.name %></p>
+        <p><%= tweet.text %></p>
+        <p><%= tweet.text %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

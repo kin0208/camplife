@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Camplife</title>
+    <title>Pictweet2</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,24 @@
   </head>
 
   <body>
+    <header class="header">
+      <div class="header__bar row">
+        <h1 class="grid-6"><a href="/">camp</a></h1>
+        <div class="user_nav grid-6">
+          <%= link_to "ログイン", "#", class: "post", id:"nav_btn" %>
+          <%= link_to "サインアップ", "#", class: "post", id:"nav_btn" %>
+          <%= link_to "マイページ", "#", class: "post", id:"nav_btn" %>
+          <%= link_to "ログアウト", "#", class: "post", id:"nav_btn" %>
+        </div>
+      </div>
+    </header>
     <%= yield %>
+    <footer>
+      <ul id="fotter_list_group">
+        <li>使い方</li>
+        <li>利用規約</li>
+        <li>初めてキャンプする方へ</li>
+      </ul>
+    </footer>
   </body>
 </html>
