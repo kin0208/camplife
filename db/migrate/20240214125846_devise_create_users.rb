@@ -4,8 +4,28 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
   def change
     create_table :users do |t|
       ## Database authenticatable
+      t.string :nickname,           null: false
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+      t.integer :camping_experience_id,      null: false
+      t.integer :transportation_method_id,      null: false
+      t.integer :camping_style_id,      null: false
+      t.integer :accommodation_style_id,      null: false
+      t.integer :preferred_season_id,      null: false
+      t.integer :preferred_weather_id,      null: false
+      t.integer :prefecture_id,      null: false
+      t.string :campsite
+      t.string :tent
+      t.string :sleeping_bag
+      t.string :sleeping_pad
+      t.string :chair
+      t.string :camp_table
+      t.string :campfire_pit
+      t.string :lantern
+      t.string :knife
+      t.string :hatchet
+
+
 
       ## Recoverable
       t.string   :reset_password_token
