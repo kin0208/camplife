@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pictweet2</title>
+    <title>CampLife</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,22 +13,26 @@
   <body>
     <header class="header">
       <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">camp</a></h1>
+        <h1 class="grid-6"><a href="/">CAMP</a></h1>
         <div class="user_nav grid-6">
-          <%= link_to "ログイン", "#", class: "post", id:"nav_btn" %>
-          <%= link_to "サインアップ", "#", class: "post", id:"nav_btn" %>
+          <% if user_signed_in? %>
           <%= link_to "マイページ", "#", class: "post", id:"nav_btn" %>
           <%= link_to "ログアウト", "#", class: "post", id:"nav_btn" %>
+          <% else %>
+          <%= link_to "ログイン", "#", class: "post", id:"nav_btn" %>
+          <%= link_to "新規登録", "#", class: "post", id:"nav_btn" %>
+          <% end %>
         </div>
       </div>
     </header>
-    <%= yield %>
-    <footer>
-      <ul id="fotter_list_group">
-        <li>使い方</li>
-        <li>利用規約</li>
-        <li>初めてキャンプする方へ</li>
-      </ul>
-    </footer>
   </body>
+    <%= yield %>
+
+  <footer class="footer">
+    <ul id="fotter_list_group">
+      <li>使い方</li>
+      <li>利用規約</li>
+      <li>初めてキャンプする方へ</li>
+    </ul>
+  </footer>
 </html>

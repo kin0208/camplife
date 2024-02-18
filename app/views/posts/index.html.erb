@@ -8,13 +8,31 @@
       <span class='purchase-btn-text'>投稿する</span>
     <% end %>
   </div>
-  <div class="contents row" id="camp_post">
-    <<% @posts.each do |post| %> 
-      <div class="content_post" style="background-image: url(<%= tweet.image %>);">
-        <p><%= tweet.name %></p>
-        <p><%= tweet.text %></p>
-        <p><%= tweet.text %></p>
-      </div>
-    <% end %>
+  
+  <div class='item-contents'>
+    <h2 class='title'>投稿情報一覧</h2>
+    <p>
+    </p>
+    </div>
+  <ul class='item-lists'>
+  <li class='list'>
+          <%= link_to '#' do %>
+            <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
+             <div class='item-info'>
+               <h3 class='item-name'>
+               ○○キャンプ場(東京都)
+               </h3>
+             <div class='item-price'>
+               <span>20xx年xx月xx日</span>
+             <div class='star-btn'>
+               <%# <%= image_tag "#", class:"star-icon" %> 
+               <span class='star-count'>ユーザー名</span>
+             </div>
+             </div>
+             </div>
+          <% end %>
+  </li>
+    </ul>
   </div>
+
 </div>

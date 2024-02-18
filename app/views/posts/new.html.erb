@@ -1,84 +1,231 @@
-<div class="items-sell-contents">
-  <header class="items-sell-header">
-    <%= link_to '#', camplife %>
- </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>champlile</title>
+  <style>
+    body{
+      width: 100vw;
+      height: 100vh;
+      background-color: lightseagreen;
+    }
+    a{
+      text-decoration: none;
+      color: black;
+      font-size: 2rem;
+    }
+    .items-sell-contents{
+      background-color: white;
+      width: 70%;
+      height: 100vh;
+      margin: 0 auto;
+      padding: 10px;
+      overflow: scroll;
+    }
+    .items-sell-main{
+      width: 50%;
+      margin: 0 auto;
+    }
+    input{
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="items-sell-contents">
+    <header class="items-sell-header">
+      <a href="#">CampLife</a>
+    </header>
 
-  <div class="items-sell-main">
-    <h2 class="items-sell-title">キャンプの情報を入力</h2>
-    <%= form_with model: @post, local: true do |f| %>
-
-      <%# <%= render 'shared/error_messages', model: f.object %>
-
-    <%# 場所の名前と都道府県 %>
-    <div class="new-items">
-      <div class="weight-bold-text">
-        キャンプ地
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_area :location_name, class:"items-text", id:"post-location-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
-      <div class="form">
         <div class="weight-bold-text">
-          都道府県
-          <span class="indispensable">必須</span>
+          <p>
+            キャンプ地
+            <span class="indispensable">必須</span>
+          </p>
         </div>
-        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
-      </div>
-
-    <%# 行った月と日付 %>
-    <div class="form">
-        <div class="weight-bold-text">
-          何月
-          <span class="indispensable">必須</span>
+        <input name="" cols="30" rows="10" class="items-text" id="post-location-name"></input>
+        
+        <div class="form">
+          <div class="weight-bold-text">
+            <p>
+              都道府県
+              <span class="indispensable">必須</span>
+            </p>
+            <input name="" class="select-box" id="item-prefecture" cols="30" rows="10"></input>
+          </div>
         </div>
-        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
-    </div>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">日付</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <div class='input-birth-wrap'>
-         <%= raw sprintf(
-           f.date_select(
-            :birth_date,
-             class:'select-birth',
-             id:"birth-date",
-             use_month_numbers: true,
-             prompt:'--',
-             start_year: 19,
-             end_year: (Time.now),
-             date_separator: '%s'),
-          "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
-      </div>
-    </div>
+        
+        <div class="form">
+          <div class="weight-bold-text">
+            <p>
+              何月
+              <span class="indispensable">必須</span>
+            </p>
+          </div>
+          <input name="" class="select-box" id="item-prefecture" cols="30" rows="10"></input>
+        </div>
 
+          <div class='form-text-wrap'>
+            <label class="form">日付</label>
+            <span class="indispensable">必須</span>
+          <div class='input-birth-wrap'>
+            <select id="year">年</select>
+            <select id="month">月</select>
+            <select id="day">日</select>
+          </div>
+          </div>
 
-    <%# 写真%>
+        <div class="form">
+          <div class="weight-bold-text">
+            <p>
+              写真
+              <span class="indispensable">必須</span>
+            </p>
+          </div>
+          <input name="" class="select-box" id="item-prefecture" cols="30" rows="10"></input>
+        </div>
 
-    <%# 天気%>
+        <div class="form">
+          <div class="weight-bold-text">
+            <p>
+              天気
+              <span class="indispensable">必須</span>
+            </p>
+          </div>
+          <input name="" class="select-box" id="item-prefecture" cols="30" rows="10"></input>
+        </div>
 
-    <%# 気温%>
+        <div class="form">
+          <div class="weight-bold-text">
+            <p>
+              気温
+              <span class="indispensable">必須</span>
+            </p>
+          </div>
+          <input name="" class="select-box" id="item-prefecture" cols="30" rows="10"></input>
+        </div>
 
-    <%# 風%>
+        <div class="form">
+          <div class="weight-bold-text">
+            <p>
+              風
+              <span class="indispensable">必須</span>
+            </p>
+          </div>
+          <input name="" class="select-box" id="item-prefecture" cols="30" rows="10"></input>
+        </div>
 
-    <%# キャンプスタイル%>
+        <div class="form">
+          <div class="weight-bold-text">
+            <p>
+              スタイル
+              <span class="indispensable">必須</span>
+            </p>
+          </div>
+          <input name="" class="select-box" id="item-prefecture" cols="30" rows="10"></input>
+        </div>
 
-    <%# 料金%>
+        <div class="form">
+          <div class="weight-bold-text">
+            <p>
+              料金
+              <span class="indispensable">必須</span>
+            </p>
+          </div>
+          <input name="" class="select-box" id="item-prefecture" cols="30" rows="10"></input>
+        </div>
 
-    <%# チェックイン、チェックアウト%>
+        <div class="form">
+          <div class="weight-bold-text">
+            <p>
+              チェックイン
+              <span class="indispensable">必須</span>
+            </p>
+          </div>
+          <input name="" class="select-box" id="item-prefecture" cols="30" rows="10"></input>
+        </div>
 
-    <%# 駐車場%>
+        <div class="form">
+          <div class="weight-bold-text">
+            <p>
+              宿泊
+              <span class="indispensable">必須</span>
+            </p>
+          </div>
+          <input name="" class="select-box" id="item-prefecture" cols="30" rows="10"></input>
+        </div>
 
-    <%# シャワー%>
+        <div class="form">
+          <div class="weight-bold-text">
+            <p>
+              駐車場
+              <span class="indispensable">必須</span>
+            </p>
+          </div>
+          <input name="" class="select-box" id="item-prefecture" cols="30" rows="10"></input>
+        </div>
 
-    <%# キッチン%>
+        <div class="form">
+          <div class="weight-bold-text">
+            <p>
+              シャワー
+              <span class="indispensable">必須</span>
+            </p>
+          </div>
+          <input name="" class="select-box" id="item-prefecture" cols="30" rows="10"></input>
+        </div>
 
-    <%# トイレ%>
+        <div class="form">
+          <div class="weight-bold-text">
+            <p>
+              炊事場
+              <span class="indispensable">必須</span>
+            </p>
+          </div>
+          <input name="" class="select-box" id="item-prefecture" cols="30" rows="10"></input>
+        </div>
 
-    <%# ゴミ%>
+        <div class="form">
+          <div class="weight-bold-text">
+            <p>
+              お手洗い
+              <span class="indispensable">必須</span>
+            </p>
+          </div>
+          <input name="" class="select-box" id="item-prefecture" cols="30" rows="10"></input>
+        </div>
 
-    <%# 管理人%>
+        <div class="form">
+          <div class="weight-bold-text">
+            <p>
+              ゴミ捨て場
+              <span class="indispensable">必須</span>
+            </p>
+          </div>
+          <input name="" class="select-box" id="item-prefecture" cols="30" rows="10"></input>
+        </div>
 
-    <%# 説明%>
+        <div class="form">
+          <div class="weight-bold-text">
+            <p>
+              管理人
+              <span class="indispensable">必須</span>
+            </p>
+          </div>
+          <input name="" class="select-box" id="item-prefecture" cols="30" rows="10"></input>
+        </div>
 
-    <%# コメント%>
+        <div class="form">
+          <div class="weight-bold-text">
+            <p>
+              補足
+              <span class="indispensable">必須</span>
+            </p>
+          </div>
+          <input name="" class="select-box" id="item-prefecture" cols="30" rows="10"></input>
+        </div>
+        
+  </div>
+</body>
+</html>
